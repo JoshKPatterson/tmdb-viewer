@@ -16,17 +16,11 @@ const MovieList = (props) => {
                   title={movie.original_title} 
                   key={movie.id}
                   releaseDate={movie.release_date}
-                  // onClick={() => props.movieSelect(movie)}
                 />
               </div>
             )
     })
   }
-
-  // const returnState = () => {
-  //   console.log(props);
-  // }
-
   return (
     <div>
       Movie List
