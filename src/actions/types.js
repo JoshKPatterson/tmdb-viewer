@@ -1,0 +1,2 @@
+export const MOVIE_SEARCH = 'MOVIE_SEARCH';
+export const MOVIE_SELECT = 'MOVIE_SELECT';
