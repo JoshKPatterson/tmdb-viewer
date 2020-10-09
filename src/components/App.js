@@ -7,8 +7,14 @@ function App() {
   return (
     <div className='app'>
       <MovieSearchbar />
-      <MovieList />
-      <SelectedMovie />
+      <div className='movieArea'>
+        <div className='movieListArea'>
+          <MovieList />
+        </div>
+        <div className='selectedMovieArea'>
+          <SelectedMovie />
+        </div>
+      </div>
     </div>
   );
 }

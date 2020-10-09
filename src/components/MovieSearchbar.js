@@ -11,7 +11,7 @@ const MovieSearchbar = (props) => {
   }
 
   return (
-    <div>
+    <div className='movieSearchBar'>
       <input 
         type='text'
         value={term}

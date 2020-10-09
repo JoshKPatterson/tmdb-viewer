@@ -16,6 +16,7 @@ const MovieList = (props) => {
                   title={movie.original_title} 
                   key={movie.id}
                   releaseDate={movie.release_date}
+                  overview={movie.overview}
                 />
               </div>
             )
