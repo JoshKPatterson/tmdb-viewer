@@ -12,6 +12,9 @@ const SelectedMovie = ({ movie }) => {
       {movie.release_date}
       <br />
       {movie.overview}
+      <br />
+      <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title}></img>
+
     </div>
   )
 }

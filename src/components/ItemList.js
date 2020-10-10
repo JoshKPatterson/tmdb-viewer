@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Movie from './Movie'
-import TvShow from './TvShow'
-import Person from './Person'
+import Movie from './displayItems/Movie'
+import TvShow from './displayItems/TvShow'
+import Person from './displayItems/Person'
 import { itemSelect } from '../actions'
 import { 
   MOVIE_SEARCH,

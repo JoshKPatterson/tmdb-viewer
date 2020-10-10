@@ -18,7 +18,7 @@ const itemSearchReducer = (state = null, action) => {
   }
 }
 
-const itemIdentifierReducer = (state = '', action) => {
+const itemIdentifierReducer = (state = null, action) => {
   switch(action.type){
     case MOVIE_SEARCH:
     case PERSON_SEARCH:
