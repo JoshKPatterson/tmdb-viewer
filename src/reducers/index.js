@@ -1,28 +1,47 @@
-import { MOVIE_SEARCH, MOVIE_SELECT } from '../actions/types'
+import { 
+  MOVIE_SEARCH,
+  TV_SEARCH,
+  PERSON_SEARCH,
+  ITEM_SELECT
+ } from '../actions/types'
 import { combineReducers } from 'redux'
 
 
-const movieSearchReducer = (state = null, action) => {
+const itemSearchReducer = (state = null, action) => {
   switch(action.type){
     case MOVIE_SEARCH:
+    case PERSON_SEARCH:
+    case TV_SEARCH:
       return state = action.payload
     default:
       return state;
   }
 }
 
-const movieSelectReducer = (selectedMovie = null, action) => {
+const itemIdentifierReducer = (state = '', action) => {
   switch(action.type){
-    case MOVIE_SELECT: 
+    case MOVIE_SEARCH:
+    case PERSON_SEARCH:
+    case TV_SEARCH:
+      return state = action.type
+    default:
+      return state;
+  }
+}
+
+const itemSelectReducer = (selectedItem = null, action) => {
+  switch(action.type){
+    case ITEM_SELECT: 
       return (
-        selectedMovie = action.payload
+        selectedItem = action.payload
       )
     default:
-      return selectedMovie;
+      return selectedItem;
   }
 }
 
 export default combineReducers({
-  movieSearch: movieSearchReducer,
-  movieSelect: movieSelectReducer
+  itemSearch: itemSearchReducer,
+  itemSelect: itemSelectReducer,
+  itemIdentifier: itemIdentifierReducer
 })

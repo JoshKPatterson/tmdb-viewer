@@ -1,2 +1,4 @@
 export const MOVIE_SEARCH = 'MOVIE_SEARCH';
-export const MOVIE_SELECT = 'MOVIE_SELECT';
+export const TV_SEARCH = 'TV_SEARCH';
+export const PERSON_SEARCH = 'PERSON_SEARCH';
+export const ITEM_SELECT = 'ITEM_SELECT';

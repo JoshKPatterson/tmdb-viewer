@@ -33,3 +33,7 @@ body {
   padding: 5px;
   cursor: pointer;
 }
+
+.movieItem:hover {
+  background-color: rgb(194, 194, 194);
+}

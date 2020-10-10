@@ -8,12 +8,16 @@ const SelectedMovie = ({ movie }) => {
   return (
     <div>
       {movie.title}
+      <br />
+      {movie.release_date}
+      <br />
+      {movie.overview}
     </div>
   )
 }
 
 const mapStateToProps = state => {
-  return { movie: state.movieSelect }
+  return { movie: state.itemSelect }
 }
 
 export default connect(mapStateToProps)(SelectedMovie)

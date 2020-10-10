@@ -1,26 +1,75 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Movie from './Movie'
-import { movieSelect } from '../actions'
+import TvShow from './TvShow'
+import Person from './Person'
+import { itemSelect } from '../actions'
+import { 
+  MOVIE_SEARCH,
+  TV_SEARCH,
+  PERSON_SEARCH
+} from '../actions/types'
 
 const MovieList = (props) => {
   const renderList = () => {
-    if(props.movies === null){
-      return <div>Make a search to see a list of movies!</div>
+    if(props.items === null){
+      return <div
+      >Make a search to see a list of movies!</div>
     }
-    return props.movies.map((movie) => {
-      return (<div
-                onClick={() => props.movieSelect(movie)}
-              >
-                <Movie 
-                  title={movie.original_title} 
-                  key={movie.id}
-                  releaseDate={movie.release_date}
-                  overview={movie.overview}
-                />
-              </div>
-            )
-    })
+    switch(props.type){
+      case MOVIE_SEARCH:
+        return props.items.map((item) => {
+          return (
+                  <div onClick={() => props.itemSelect(item)}>
+                    <Movie 
+                      title={item.original_title} 
+                      key={item.id}
+                      releaseDate={item.release_date}
+                      overview={item.overview}
+                    />
+                  </div>
+                )
+        })
+      case TV_SEARCH:
+        return props.items.map((item) => {
+          return (
+                  <div onClick={() => props.itemSelect(item)}>
+                    <TvShow 
+                      name={item.original_name} 
+                      key={item.id}
+                      firstAirDate={item.first_air_date}
+                      overview={item.overview}
+                    />
+                  </div>
+                )
+        })
+      case PERSON_SEARCH:
+        return props.items.map((item) => {
+          return (
+                  <div onClick={() => props.itemSelect(item)}>
+                    <Person 
+                      name={item.name} 
+                      key={item.id}
+                      knownFor={item.known_for}
+                    />
+                  </div>
+                )
+        })
+      default:
+        return null;
+    }
+    // return props.items.map((item) => {
+    //   return (
+    //           <div onClick={() => props.itemSelect(item)}>
+    //             <Movie 
+    //               title={item.original_title} 
+    //               key={item.id}
+    //               releaseDate={item.release_date}
+    //               overview={item.overview}
+    //             />
+    //           </div>
+    //         )
+    // })
   }
   return (
     <div>
@@ -31,7 +80,7 @@ const MovieList = (props) => {
 }
 
 const mapStateToProps = state => {
-  return { movies: state.movieSearch }
+  return { items: state.itemSearch, type: state.itemIdentifier }
 }
 
-export default connect(mapStateToProps, { movieSelect })(MovieList)
+export default connect(mapStateToProps, { itemSelect })(MovieList)

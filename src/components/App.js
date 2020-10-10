@@ -6,7 +6,7 @@ import SelectedMovie from './SelectedMovie';
 function App() {
   return (
     <div className='app'>
-      <MovieSearchbar />
+        <MovieSearchbar />
       <div className='movieArea'>
         <div className='movieListArea'>
           <MovieList />

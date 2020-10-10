@@ -1,5 +1,10 @@
 import moviedb from '../apis/moviedb';
-import { MOVIE_SEARCH, MOVIE_SELECT } from './types'
+import { 
+  MOVIE_SEARCH, 
+  ITEM_SELECT,
+  TV_SEARCH,
+  PERSON_SEARCH
+} from './types'
 
 export const movieSearch = (query) => async dispatch => {
   const response = await moviedb.get('/search/movie', {
@@ -10,9 +15,27 @@ export const movieSearch = (query) => async dispatch => {
   dispatch({ type: MOVIE_SEARCH, payload: response.data.results })
 }
 
-export const movieSelect = movie => {
+export const tvShowSearch = (query) => async dispatch => {
+  const response = await moviedb.get('/search/tv', {
+    params: {
+      query: query
+    }
+  });
+  dispatch({ type: TV_SEARCH, payload: response.data.results })
+}
+
+export const personSearch = (query) => async dispatch => {
+  const response = await moviedb.get('/search/person', {
+    params: {
+      query: query
+    }
+  });
+  dispatch({ type: PERSON_SEARCH, payload: response.data.results })
+}
+
+export const itemSelect = item => {
   return {
-    type: MOVIE_SELECT,
-    payload: movie
+    type: ITEM_SELECT,
+    payload: item
   }
 }
