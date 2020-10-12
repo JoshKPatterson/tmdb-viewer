@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Movie = (props) => {
+const Person = (props) => {
   const knownFor = props.knownFor.map(item => {
     return (
       <div>{item.original_title}</div>
@@ -17,4 +17,4 @@ const Movie = (props) => {
   )
 }
 
-export default Movie
+export default Person

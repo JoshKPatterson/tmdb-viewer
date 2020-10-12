@@ -1,26 +1,29 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import MovieDetails from './detailItems/MovieDetails';
+import TvShowDetails from './detailItems/TvShowDetails';
+import PersonDetails from './detailItems/PersonDetails';
+import { 
+  MOVIE_SEARCH,
+  TV_SEARCH,
+  PERSON_SEARCH
+ } from '../actions/types'
 
-const SelectedMovie = ({ movie }) => {
-  if(!movie){
-    return <div>Select a movie!</div>
+const SelectedItem = ({ type }) => {
+  switch(type){
+    case MOVIE_SEARCH:
+      return <MovieDetails />
+    case TV_SEARCH:
+      return <TvShowDetails />
+    case PERSON_SEARCH:
+      return <PersonDetails />
+    default:
+      return null;
   }
-  return (
-    <div>
-      {movie.title}
-      <br />
-      {movie.release_date}
-      <br />
-      {movie.overview}
-      <br />
-      <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title}></img>
-
-    </div>
-  )
 }
 
 const mapStateToProps = state => {
-  return { movie: state.itemSelect }
+  return { type: state.itemIdentifier }
 }
 
-export default connect(mapStateToProps)(SelectedMovie)
+export default connect(mapStateToProps)(SelectedItem)

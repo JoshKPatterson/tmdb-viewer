@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MovieList from './ItemList';
 import MovieSearchbar from './ItemSearchbar';
 import SelectedMovie from './SelectedItem';
+import { genresGet } from '../actions'
+import { connect } from 'react-redux'
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.genresGet();
+  }, [])
   return (
     <div className='app'>
         <MovieSearchbar />
@@ -19,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, { genresGet })(App);

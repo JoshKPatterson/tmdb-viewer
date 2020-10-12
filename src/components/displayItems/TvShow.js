@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Movie = (props) => {
+const TvShow = (props) => {
   return (
     <div className='movieItem'
     >
@@ -9,4 +9,4 @@ const Movie = (props) => {
   )
 }
 
-export default Movie
+export default TvShow

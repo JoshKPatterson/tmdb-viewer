@@ -3,7 +3,8 @@ import {
   MOVIE_SEARCH, 
   ITEM_SELECT,
   TV_SEARCH,
-  PERSON_SEARCH
+  PERSON_SEARCH,
+  GENRES_GET
 } from './types'
 
 export const movieSearch = (query) => async dispatch => {
@@ -38,4 +39,12 @@ export const itemSelect = item => {
     type: ITEM_SELECT,
     payload: item
   }
+}
+
+export const genresGet = () => async dispatch => {
+  const responseObj = {
+    movieGenres: await moviedb.get('/genre/movie/list'),
+    showGenres: await moviedb.get('/genre/tv/list')
+  };
+  dispatch({ type: GENRES_GET, payload: responseObj })
 }
