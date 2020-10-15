@@ -1,7 +1,6 @@
 import { 
   MOVIE_SEARCH,
   TV_SEARCH,
-  PERSON_SEARCH,
   ITEM_SELECT,
   GENRES_GET
  } from '../actions/types'
@@ -19,7 +18,6 @@ const itemSearchReducer = (state = {
 }, action) => {
   switch(action.type){
     case MOVIE_SEARCH:
-    case PERSON_SEARCH:
     case TV_SEARCH:
       return state = { 
         list: action.payload.data.results,
@@ -38,7 +36,6 @@ const itemSearchReducer = (state = {
 const itemIdentifierReducer = (state = null, action) => {
   switch(action.type){
     case MOVIE_SEARCH:
-    case PERSON_SEARCH:
     case TV_SEARCH:
       return state = action.type
     default:
@@ -49,7 +46,6 @@ const itemIdentifierReducer = (state = null, action) => {
 const itemSelectReducer = (selectedItem = null, action) => {
   switch(action.type){
     case MOVIE_SEARCH:
-    case PERSON_SEARCH:
     case TV_SEARCH:
       return selectedItem = null;
     case ITEM_SELECT: 

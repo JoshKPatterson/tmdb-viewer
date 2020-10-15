@@ -26,7 +26,7 @@ const PreviousPageButton = ({ type, movieSearch, tvShowSearch, query, page }) =>
 
   return (
     <div>
-      <button onClick={() => onSubmit()}>Previous Page</button>
+      <button onClick={onSubmit}>Previous Page</button>
     </div>
   )
 }

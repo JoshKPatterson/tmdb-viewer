@@ -2,14 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Movie from './displayItems/Movie'
 import TvShow from './displayItems/TvShow'
-import Person from './displayItems/Person'
 import PageCountDisplay from './PageCountDisplay';
 import ButtonArea from './paginationButtons/ButtonArea';
 import { itemSelect } from '../actions'
 import { 
   MOVIE_SEARCH,
-  TV_SEARCH,
-  PERSON_SEARCH
+  TV_SEARCH
 } from '../actions/types'
 
 const MovieList = (props) => {
@@ -41,18 +39,6 @@ const MovieList = (props) => {
                       key={item.id}
                       firstAirDate={item.first_air_date}
                       overview={item.overview}
-                    />
-                  </div>
-                )
-        })
-      case PERSON_SEARCH:
-        return props.items.map((item) => {
-          return (
-                  <div onClick={() => props.itemSelect(item)}>
-                    <Person 
-                      name={item.name} 
-                      key={item.id}
-                      knownFor={item.known_for}
                     />
                   </div>
                 )

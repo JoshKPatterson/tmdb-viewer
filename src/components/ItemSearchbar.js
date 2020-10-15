@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { 
   movieSearch,
-  tvShowSearch,
-  personSearch
+  tvShowSearch
  } from '../actions';
 import Dropdown from './Dropdown'
 
@@ -22,9 +21,6 @@ const MovieSearchbar = (props) => {
         break;
       case 'tvShow':
         props.tvShowSearch(term, 1)
-        break;
-      case 'person':
-        props.personSearch(term)
         break;
       default:
         return;
@@ -51,6 +47,5 @@ const MovieSearchbar = (props) => {
 
 export default connect(null, { 
   movieSearch,
-  tvShowSearch,
-  personSearch
+  tvShowSearch
  })(MovieSearchbar)

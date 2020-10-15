@@ -3,7 +3,6 @@ import {
   MOVIE_SEARCH, 
   ITEM_SELECT,
   TV_SEARCH,
-  PERSON_SEARCH,
   GENRES_GET
 } from './types'
 
@@ -31,15 +30,6 @@ export const tvShowSearch = (query, pageNum) => async dispatch => {
     data: response.data,
     query: query
   } })
-}
-
-export const personSearch = (query) => async dispatch => {
-  const response = await moviedb.get('/search/person', {
-    params: {
-      query: query
-    }
-  });
-  dispatch({ type: PERSON_SEARCH, payload: response.data.results })
 }
 
 export const itemSelect = item => {

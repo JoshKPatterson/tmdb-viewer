@@ -6,7 +6,6 @@ const Dropdown = (props) => {
       <select onChange={props.setSetting}>
         <option value='movie'>Movie</option>
         <option value='tvShow'>TV Show</option>
-        <option value='person'>Person</option>
       </select>
     </div>
   )

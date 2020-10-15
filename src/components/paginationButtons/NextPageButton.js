@@ -26,7 +26,7 @@ const NextPageButton = ({ type, movieSearch, tvShowSearch, query, page }) => {
 
   return (
     <div>
-      <button onClick={() => onSubmit()}>Next Page</button>
+      <button onClick={onSubmit}>Next Page</button>
     </div>
   )
 }
