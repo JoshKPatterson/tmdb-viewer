@@ -1,4 +1,4 @@
-# Media Search
+# TMDb Viewer
 ### This is a React project made by Joshua Patterson (https://github.com/JoshKPatterson)
 ### Live version available here:
 ### https://joshkpatterson.github.io/tmdb-viewer/
