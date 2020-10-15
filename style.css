@@ -1,0 +1,39 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 14pt
+}
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.app {
+  width: 100vw;
+}
+.movieSearchBar {
+  display: flex;
+  justify-content: center;
+}
+.movieArea {
+  display: flex;
+  flex-direction: row;
+}
+.movieListArea, .selectedMovieArea {
+  display: inline-block;
+  width: 50%;
+  margin: 10px;
+}
+.movieItem {
+  border: 0.5px solid black;
+  margin: 10px 0px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.movieItem:hover {
+  background-color: rgb(194, 194, 194);
+}

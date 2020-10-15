@@ -1,0 +1,12 @@
+{
+  "main.js": "/tmdb-viewer/static/js/main.1eb16e0a.chunk.js",
+  "main.js.map": "/tmdb-viewer/static/js/main.1eb16e0a.chunk.js.map",
+  "runtime~main.js": "/tmdb-viewer/static/js/runtime~main.aaad15b3.js",
+  "runtime~main.js.map": "/tmdb-viewer/static/js/runtime~main.aaad15b3.js.map",
+  "static/js/2.c1cbf7a7.chunk.js": "/tmdb-viewer/static/js/2.c1cbf7a7.chunk.js",
+  "static/js/2.c1cbf7a7.chunk.js.map": "/tmdb-viewer/static/js/2.c1cbf7a7.chunk.js.map",
+  "index.html": "/tmdb-viewer/index.html",
+  "precache-manifest.dc34e313e164cdfe88798ee1991a2731.js": "/tmdb-viewer/precache-manifest.dc34e313e164cdfe88798ee1991a2731.js",
+  "service-worker.js": "/tmdb-viewer/service-worker.js",
+  "static/media/image_not_available.jpg": "/tmdb-viewer/static/media/image_not_available.d3751d34.jpg"
+}
