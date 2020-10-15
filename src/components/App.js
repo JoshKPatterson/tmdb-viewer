@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
-import MovieList from './ItemList';
-import MovieSearchbar from './ItemSearchbar';
-import SelectedMovie from './SelectedItem';
+import ItemList from './ItemList';
+import ItemSearchbar from './ItemSearchbar';
+import SelectedItem from './SelectedItem';
 import { genresGet } from '../actions'
 import { connect } from 'react-redux'
 
-function App(props) {
+function App({ genresGet }) {
   useEffect(() => {
-    props.genresGet();
+    genresGet();
   }, [])
   return (
     <div className='app'>
-        <MovieSearchbar />
+        <ItemSearchbar />
       <div className='movieArea'>
         <div className='movieListArea'>
-          <MovieList />
+          <ItemList />
         </div>
         <div className='selectedMovieArea'>
-          <SelectedMovie />
+          <SelectedItem />
         </div>
       </div>
     </div>

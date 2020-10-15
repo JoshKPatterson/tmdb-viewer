@@ -7,22 +7,30 @@ import {
   GENRES_GET
 } from './types'
 
-export const movieSearch = (query) => async dispatch => {
+export const movieSearch = (query, pageNum) => async dispatch => {
   const response = await moviedb.get('/search/movie', {
     params: {
-      query: query
+      query: query,
+      page: pageNum
     }
   });
-  dispatch({ type: MOVIE_SEARCH, payload: response.data.results })
+  dispatch({ type: MOVIE_SEARCH, payload: {
+    data: response.data,
+    query: query
+  } })
 }
 
-export const tvShowSearch = (query) => async dispatch => {
+export const tvShowSearch = (query, pageNum) => async dispatch => {
   const response = await moviedb.get('/search/tv', {
     params: {
-      query: query
+      query: query,
+      page: pageNum
     }
   });
-  dispatch({ type: TV_SEARCH, payload: response.data.results })
+  dispatch({ type: TV_SEARCH, payload: {
+    data: response.data,
+    query: query
+  } })
 }
 
 export const personSearch = (query) => async dispatch => {

@@ -18,10 +18,10 @@ const MovieSearchbar = (props) => {
   const onSubmit = e => {
     switch(setting){
       case 'movie':
-        props.movieSearch(term)
+        props.movieSearch(term, 1)
         break;
       case 'tvShow':
-        props.tvShowSearch(term)
+        props.tvShowSearch(term, 1)
         break;
       case 'person':
         props.personSearch(term)
@@ -31,12 +31,15 @@ const MovieSearchbar = (props) => {
     }
   }
 
+  const keyPressed = e => e.key === 'Enter' ? onSubmit() : null
+
   return (
     <div className='movieSearchBar'>
       <input 
         type='text'
         value={term}
         onChange={e => setTerm(e.target.value)}
+        onKeyPress={keyPressed}
       />
       <button onClick={onSubmit}>Search</button>
       <Dropdown setSetting={onSetSetting}/>

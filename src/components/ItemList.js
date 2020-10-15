@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Movie from './displayItems/Movie'
 import TvShow from './displayItems/TvShow'
 import Person from './displayItems/Person'
+import PageCountDisplay from './PageCountDisplay';
+import ButtonArea from './paginationButtons/ButtonArea';
 import { itemSelect } from '../actions'
 import { 
   MOVIE_SEARCH,
@@ -20,7 +22,7 @@ const MovieList = (props) => {
       case MOVIE_SEARCH:
         return props.items.map((item) => {
           return (
-                  <div onClick={() => props.itemSelect(item)}>
+                  <div onClick={() => props.itemSelect(item)} key={item.id}>
                     <Movie 
                       title={item.original_title} 
                       key={item.id}
@@ -33,7 +35,7 @@ const MovieList = (props) => {
       case TV_SEARCH:
         return props.items.map((item) => {
           return (
-                  <div onClick={() => props.itemSelect(item)}>
+                  <div onClick={() => props.itemSelect(item)} key={item.id}>
                     <TvShow 
                       name={item.original_name} 
                       key={item.id}
@@ -58,29 +60,23 @@ const MovieList = (props) => {
       default:
         return null;
     }
-    // return props.items.map((item) => {
-    //   return (
-    //           <div onClick={() => props.itemSelect(item)}>
-    //             <Movie 
-    //               title={item.original_title} 
-    //               key={item.id}
-    //               releaseDate={item.release_date}
-    //               overview={item.overview}
-    //             />
-    //           </div>
-    //         )
-    // })
   }
+  
+
+  const renderPages = () => props.items === null ? null : <PageCountDisplay />
+  const renderButtons = () => props.items === null ? null : <ButtonArea />
+
   return (
     <div>
-      Movie List
+      {renderPages()}
       {renderList()}
+      {renderButtons()}
     </div>
   )
 }
 
 const mapStateToProps = state => {
-  return { items: state.itemSearch, type: state.itemIdentifier }
+  return { items: state.itemSearch.list, type: state.itemIdentifier }
 }
 
 export default connect(mapStateToProps, { itemSelect })(MovieList)

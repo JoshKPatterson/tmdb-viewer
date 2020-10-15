@@ -8,12 +8,28 @@ import {
 import { combineReducers } from 'redux'
 
 
-const itemSearchReducer = (state = null, action) => {
+const itemSearchReducer = (state = {
+  list: null, 
+  query: null,
+  pages: {
+    currentPage: null,
+    totalResults: null,
+    totalPages: null
+  }
+}, action) => {
   switch(action.type){
     case MOVIE_SEARCH:
     case PERSON_SEARCH:
     case TV_SEARCH:
-      return state = action.payload
+      return state = { 
+        list: action.payload.data.results,
+        query: action.payload.query, 
+        pages: {
+          currentPage: action.payload.data.page,
+          totalResults: action.payload.data.total_results,
+          totalPages: action.payload.data.total_pages
+        } 
+      }
     default:
       return state;
   }

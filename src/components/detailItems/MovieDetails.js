@@ -1,31 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import image_not_available from '../../images/image_not_available.jpg'
+import { genreDisplay, checkPosterPath } from '../../extraFunctions'
 
-const SelectedMovie = ({ movie, movieGenres }) => {
+const MovieDetails = ({ movie, movieGenres }) => {
+
+  const [imageLoaded, setImageLoaded] = useState(false)
+
+  useEffect(() => {
+    setImageLoaded(false)
+  }, [movie])
+
   if(!movie){
     return <div>Select a movie!</div>
   }
 
-  const genres = movie.genre_ids.map(num => {
-   const genre = movieGenres.filter(obj => obj.id === num)
-  return genre[0].name
-  })
-
-  console.log(genres)
-
   return (
     <div>
-      {movie.title}
+      {!movie.poster_path ? null : imageLoaded ? null : <div>Loading...</div>}
+      {checkPosterPath(movie, imageLoaded, movie.title)}
       <br />
-      {movie.release_date}
+      {checkPosterPath(movie, imageLoaded, movie.release_date, 'Release date unknown')}
       <br />
-      {movie.overview}
+      {checkPosterPath(movie, imageLoaded, movie.overview)}
       <br />
-      <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title}></img>
+      <img
+        src={movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}` : image_not_available}
+        key={movie.poster_path} 
+        alt={movie.title}
+        onLoad={() => setImageLoaded(true)}
+        onError={() => setImageLoaded(true)}
+      >
+      </img>
       <br />
-      Genres:
-      {genres.length === 0 ? <div>None to display</div> : genres.map(genre => <div>{genre}</div> )}
-      
+      {checkPosterPath(movie, imageLoaded, genreDisplay(movie, movieGenres))}
     </div>
   )
 }
@@ -34,4 +42,4 @@ const mapStateToProps = state => {
   return { movie: state.itemSelect, movieGenres:  state.movieGenresList }
 }
 
-export default connect(mapStateToProps)(SelectedMovie)
+export default connect(mapStateToProps)(MovieDetails)
