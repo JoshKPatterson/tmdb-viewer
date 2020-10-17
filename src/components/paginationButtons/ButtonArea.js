@@ -18,7 +18,7 @@ const ButtonArea = ({ pages }) => {
   }
 
   return (
-    <div>
+    <div className='buttonArea'>
       {renderButtonLogic()}
     </div>
   )

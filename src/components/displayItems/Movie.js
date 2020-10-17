@@ -2,7 +2,7 @@ import React from 'react';
 
 const Movie = (props) => {
   return (
-    <div className='movieItem'
+    <div className='listItem'
     >
       {props.title} ({props.releaseDate})
     </div>

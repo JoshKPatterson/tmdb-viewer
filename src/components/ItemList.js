@@ -12,10 +12,6 @@ import {
 
 const MovieList = (props) => {
   const renderList = () => {
-    if(props.items === null){
-      return <div
-      >Make a search to see a list of movies!</div>
-    }
     switch(props.type){
       case MOVIE_SEARCH:
         return props.items.map((item) => {
@@ -48,13 +44,11 @@ const MovieList = (props) => {
     }
   }
   
-
-  const renderPages = () => props.items === null ? null : <PageCountDisplay />
   const renderButtons = () => props.items === null ? null : <ButtonArea />
 
   return (
     <div>
-      {renderPages()}
+      <PageCountDisplay />
       {renderList()}
       {renderButtons()}
     </div>

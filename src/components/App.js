@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import ItemList from './ItemList';
 import ItemSearchbar from './ItemSearchbar';
 import SelectedItem from './SelectedItem';
+import Header from './Header'
+import Attribution from './Attribution'
 import { genresGet } from '../actions'
 import { connect } from 'react-redux'
 
@@ -11,15 +13,17 @@ function App({ genresGet }) {
   }, [])
   return (
     <div className='app'>
+      <Header />
         <ItemSearchbar />
-      <div className='movieArea'>
-        <div className='movieListArea'>
+      <div className='itemArea'>
+        <div className='itemListArea'>
           <ItemList />
         </div>
-        <div className='selectedMovieArea'>
+        <div className='selectedItemArea'>
           <SelectedItem />
         </div>
       </div>
+      <Attribution />
     </div>
   );
 }

@@ -24,11 +24,7 @@ const NextPageButton = ({ type, movieSearch, tvShowSearch, query, page }) => {
     }
   }
 
-  return (
-    <div>
-      <button onClick={onSubmit}>Next Page</button>
-    </div>
-  )
+  return <button onClick={onSubmit} className='nextButton'>Next Page</button>
 }
 
 const mapStatetoProps = state => {

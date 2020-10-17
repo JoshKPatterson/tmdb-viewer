@@ -2,7 +2,7 @@ import React from 'react';
 
 const TvShow = (props) => {
   return (
-    <div className='movieItem'
+    <div className='listItem'
     >
       {props.name} ({props.firstAirDate})
     </div>

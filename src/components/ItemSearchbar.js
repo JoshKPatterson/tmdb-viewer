@@ -30,7 +30,7 @@ const MovieSearchbar = (props) => {
   const keyPressed = e => e.key === 'Enter' ? onSubmit() : null
 
   return (
-    <div className='movieSearchBar'>
+    <div className='itemSearchBar'>
       <input 
         type='text'
         value={term}
