@@ -30,7 +30,10 @@ header {
   color: white;
   display: flex;
   justify-content: center;
-  padding: 0.5em 0;
+  h1 {
+    font-weight: 700;
+    font-size: 2em;
+  }
 }
 
 .app {
@@ -44,7 +47,7 @@ header {
   // justify-content: center;
   margin: 0 auto;
   flex-direction: row;
-  width: 95%;
+  width: 90%;
   padding-bottom: 5em;
 }
 
@@ -85,6 +88,10 @@ header {
       border-radius: 20px;
       border: solid 1px rgba(84, 84, 84, 0.5);
       cursor: pointer;
+    }
+
+    option {
+      height: 10vh;
     }
 
     .dropdown-arrow {
@@ -135,11 +142,16 @@ header {
 
 .itemListArea, .selectedItemArea {
   display: inline-block;
-  width: 50%;
   margin: 10px;
 }
 
+.itemListArea { width: 40% }
+.selectedItemArea { 
+  width: 60%;
+}
+
 .listItem {
+  font-size: 13pt;
   border: 0.5px solid black;
   background: $item-color;
   padding: 5px;
@@ -177,8 +189,61 @@ header {
   }
 }
 
-
-
+.loading {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  margin-top: 20vh;
+}
+.selectedItem {
+  margin-top: 1.4em;
+  // background-color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  img {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+    border: $border-style;
+    border-right: 0;
+  }
+  .selectedItemDetails {
+    padding: 1em 2em;
+    background: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    // overflow-x: hidden;
+    overflow: auto;
+    width: 400px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border: $border-style;
+    border-left: 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    h2 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.4em;
+    }
+    p{
+      span{
+        font-weight: 700;
+      }
+    }
+    .genres {
+      padding-bottom: 1em;
+    }
+  }
+}
 
 footer {
   position: absolute;

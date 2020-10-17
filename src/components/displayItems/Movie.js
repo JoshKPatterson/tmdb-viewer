@@ -4,7 +4,7 @@ const Movie = (props) => {
   return (
     <div className='listItem'
     >
-      {props.title} ({props.releaseDate})
+      {props.title} {props.releaseDate ? `(${props.releaseDate})` : null}
     </div>
   )
 }

@@ -15,26 +15,36 @@ const TvShowDetails = ({ show, showGenres }) => {
     return <div>Select a show!</div>
   }
 
-  return (
-    <div>
-      {!show.poster_path ? null : imageLoaded ? null : <div>Loading...</div>}
-      {checkPosterPath(show, imageLoaded, show.name)}
-      <br />
-      {checkPosterPath(show, imageLoaded, show.first_air_date, 'First Air Date Unknown')}
-      <br />
-      {checkPosterPath(show, imageLoaded, show.overview)}
-      <br />
-      <img 
+  const renderList = () => {
+    const renderDetails = () => {
+      return (
+        <div className='selectedItemDetails'>
+          <h2>{show.title}</h2>
+          <p><span>First Air Date</span><br />{show.first_air_date ? show.first_air_date : 'First air date unknown'}</p>
+          <p><span>Overview</span>{show.overview}</p>
+          <p><span>Genres</span>{genreDisplay(show, showGenres)}</p>
+        </div>
+      )
+    }
+    return (
+      <div className='selectedItem'>
+        <img 
         src={show.poster_path ? `https://image.tmdb.org/t/p/w300${show.poster_path}` : image_not_available} 
         key={show.poster_path}
-        alt={show.title}
+        alt={''}
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageLoaded(true)}
-      >
-      </img>
-      <br />
-      {checkPosterPath(show, imageLoaded, genreDisplay(show, showGenres))}
-    </div>
+      />
+      {checkPosterPath(show, imageLoaded, renderDetails())}
+      </div>
+    )
+  }
+
+  return (
+    <>
+      {!show.poster_path ? null : imageLoaded ? null : <div className='loading'>Loading...</div>}
+      {renderList()}
+    </>
   )
 }
 

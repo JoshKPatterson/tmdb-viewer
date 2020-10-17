@@ -4,7 +4,7 @@ const TvShow = (props) => {
   return (
     <div className='listItem'
     >
-      {props.name} ({props.firstAirDate})
+      {props.name} {props.firstAirDate ? `(${props.firstAirDate})` : null}
     </div>
   )
 }

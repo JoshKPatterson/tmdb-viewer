@@ -11,7 +11,6 @@ export const genreDisplay = (a, b) => {
   const genreItems = [...new Set(genres)]
   return (
     <div>
-      Genres:
       {genreItems.length === 0 ? <div>None to display</div> : genreItems.map(genre => <div key={genre}>{genre}</div> )}
     </div>
   )
@@ -22,4 +21,4 @@ export const genreDisplay = (a, b) => {
 // b refers to the state variable that determines whether image has loaded, like imageLoaded
 // item refers to the item that is being rendered by the function
 // replace refers to an optional special item, used to indicate a lack of item
-export const checkPosterPath = (a, state, item, replace = item) => !a.poster_path ? item : !state ? null : replace
+export const checkPosterPath = (a, state, item, replace) => !a.poster_path ? item : !state ? null : item ? item : replace
