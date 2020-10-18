@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import image_not_available from '../../images/image_not_available.jpg'
 import { genreDisplay, checkPosterPath } from '../../extraFunctions'
+import Loader from '../Loader'
 
 const TvShowDetails = ({ show, showGenres }) => {
 
@@ -27,24 +28,24 @@ const TvShowDetails = ({ show, showGenres }) => {
       )
     }
     return (
-      <div className='selectedItem'>
+      <>
         <img 
         src={show.poster_path ? `https://image.tmdb.org/t/p/w300${show.poster_path}` : image_not_available} 
         key={show.poster_path}
         alt={''}
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageLoaded(true)}
-      />
+        />
       {checkPosterPath(show, imageLoaded, renderDetails())}
-      </div>
+      </>
     )
   }
 
   return (
-    <>
-      {!show.poster_path ? null : imageLoaded ? null : <div className='loading'>Loading...</div>}
+    <div className='selectedItem'>
+      {!show.poster_path ? null : imageLoaded ? null : <Loader />}
       {renderList()}
-    </>
+    </div>
   )
 }
 
