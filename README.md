@@ -12,6 +12,7 @@ This project has a number of technologies involved, including:
  - React Hooks
  - Axios
  - redux-thunk
+ - SASS
 # What does it show?
 This project demonstrates my (Joshua Patterson) ability to use various React Hooks such as useState and useEffect, connect a Redux store to a react application, connect an API to a front-end, use axios and redux-thunk to asynchronously store fetched data into a Redux reducer, create validation logic and create pagination from scratch.
 
