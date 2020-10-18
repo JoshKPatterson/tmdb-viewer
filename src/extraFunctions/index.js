@@ -10,9 +10,9 @@ export const genreDisplay = (a, b) => {
    })
   const genreItems = [...new Set(genres)]
   return (
-    <div>
-      {genreItems.length === 0 ? <div>None to display</div> : genreItems.map(genre => <div key={genre}>{genre}</div> )}
-    </div>
+    <>
+      {genreItems.length === 0 ? <>Genres Unknown.</> : genreItems.map(genre => <li className='genre' key={genre}> {genre}</li> )}
+    </>
   )
 } 
 

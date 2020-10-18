@@ -15,9 +15,9 @@ const PageCountDisplay = ({ pages }) => {
   }
 
   return (
-    <div>
+    <>
       {pageCalculation()}
-    </div>
+    </>
   )
 }
 

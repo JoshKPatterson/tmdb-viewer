@@ -16,7 +16,7 @@ const MovieList = (props) => {
       case MOVIE_SEARCH:
         return props.items.map((item) => {
           return (
-                  <div onClick={() => props.itemSelect(item)} key={item.id}>
+                  <div onClick={() => props.itemSelect(item)} key={item.id} className='listItem'>
                     <Movie 
                       title={item.original_title} 
                       key={item.id}
@@ -47,11 +47,13 @@ const MovieList = (props) => {
   const renderButtons = () => props.items === null ? null : <ButtonArea />
 
   return (
-    <div>
+    <>
       <PageCountDisplay />
-      {renderList()}
+      <div className='list'>
+        {renderList()}
+      </div>
       {renderButtons()}
-    </div>
+    </>
   )
 }
 

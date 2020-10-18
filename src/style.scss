@@ -1,4 +1,4 @@
-$bg-color: rgba(220,255,251,0.5);
+$bg-color: #dcfffb;
 $border-style: solid 1px rgba(84, 84, 84, 0.5);
 $btn-hover-color: #2CC9B6;
 $btn-color: #24a394;
@@ -15,7 +15,7 @@ $item-hover-color: #EBEBEB;
 }
 
 body {
-  background: $bg-color; 
+  background:rgba(36, 163, 148, 0.1); 
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,6 @@ header {
 
 .itemArea {
   display: flex;
-  // justify-content: center;
   margin: 0 auto;
   flex-direction: row;
   width: 90%;
@@ -137,7 +136,7 @@ header {
 }
 
 .pageCountDisplay {
-  margin-left: 1em;
+  margin: 0 0 1em 1em;
 }
 
 .itemListArea, .selectedItemArea {
@@ -145,30 +144,45 @@ header {
   margin: 10px;
 }
 
-.itemListArea { width: 40% }
+.itemListArea {
+  width: 40% 
+}
+
 .selectedItemArea { 
   width: 60%;
 }
 
 .listItem {
-  font-size: 13pt;
-  border: 0.5px solid black;
-  background: $item-color;
-  padding: 5px;
-  cursor: pointer;
-  margin: 0.3em 0;
-  padding: 0.33em 0 0.33em 1em;
-  border-radius: 30px;
-  border: $border-style;
-
-  &:hover {
-    background: $item-hover-color;
+  &:nth-child(even){
+    background: rgba(36, 163, 148, 0.3);
+    &:hover{
+      background: rgba(36, 163, 148, 0.5);
+    }
   }
+  &:nth-child(odd){
+    background:rgba(36, 163, 148, 0);
+    &:hover {
+      background: rgba(36, 163, 148, 0.1)
+    }
+  }
+  &:nth-of-type(1){
+    margin-top: 0
+  }
+}
+
+.listItem {
+  font-size: 13pt;
+  cursor: pointer;
+  color: rgba(0,0,0,0.7);
+  padding: 0.75em;
+  border-radius: 10px;
+  margin-top: 0.3em;
 }
 
 .buttonArea {
   display: flex;
   flex-direction: row;
+  margin-top: 1em;
 
   button {
     border: $border-style;
@@ -191,16 +205,33 @@ header {
 
 .loading {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  // align-items: center;
-  margin-top: 20vh;
+  margin: 0 auto;
+  z-index: 10;
+}
+.loader {
+  border: 7.5px solid white;
+  border-top: 7.5px solid $btn-color;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .selectedItem {
-  margin-top: 1.4em;
-  // background-color: white;
+  background: white;
+  margin-top: 2em;
   border-radius: 30px;
   display: flex;
   flex-direction: row;
+  // border: $border-style;
+  height: 600px;
+  width: 800px;
   img {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -208,15 +239,12 @@ header {
     max-width: 400px;
     min-height: 600px;
     max-height: 600px;
-    border: $border-style;
-    border-right: 0;
   }
   .selectedItemDetails {
     padding: 1em 2em;
     background: white;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    // overflow-x: hidden;
     overflow: auto;
     width: 400px;
     max-height: 600px;
@@ -224,8 +252,8 @@ header {
     flex-direction: column;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    border: $border-style;
-    border-left: 0;
+    // border: $border-style;
+    // border-left: 0;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -241,6 +269,7 @@ header {
     }
     .genres {
       padding-bottom: 1em;
+      list-style: none;
     }
   }
 }

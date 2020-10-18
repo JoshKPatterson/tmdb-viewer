@@ -21,8 +21,8 @@ const TvShowDetails = ({ show, showGenres }) => {
         <div className='selectedItemDetails'>
           <h2>{show.title}</h2>
           <p><span>First Air Date</span><br />{show.first_air_date ? show.first_air_date : 'First air date unknown'}</p>
-          <p><span>Overview</span>{show.overview}</p>
-          <p><span>Genres</span>{genreDisplay(show, showGenres)}</p>
+          <p><span>Overview</span>{show.overview ? show.overview : 'None to display'}</p>
+          <p><span>Genres</span><br />{genreDisplay(show, showGenres)}</p>
         </div>
       )
     }
