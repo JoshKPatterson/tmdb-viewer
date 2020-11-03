@@ -30,10 +30,11 @@ const MovieList = (props) => {
       case TV_SEARCH:
         return props.items.map((item) => {
           return (
-                  <div onClick={() => props.itemSelect(item)} key={item.id}>
+                  <div onClick={() => props.itemSelect(item)} key={item.id} className='listItem'>
                     <TvShow 
                       name={item.original_name} 
                       key={item.id}
+                      image={item.poster_path}
                       firstAirDate={item.first_air_date}
                       overview={item.overview}
                     />

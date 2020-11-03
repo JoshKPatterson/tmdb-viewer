@@ -3,8 +3,10 @@ import { connect } from 'react-redux'
 import image_not_available from '../../images/image_not_available.jpg'
 import { genreDisplay, checkPosterPath } from '../../extraFunctions'
 import Loader from '../Loader'
+import { clearSelected } from '../../actions'
 
-const TvShowDetails = ({ show, showGenres }) => {
+
+const TvShowDetails = ({ show, showGenres, clearSelected }) => {
 
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -13,18 +15,27 @@ const TvShowDetails = ({ show, showGenres }) => {
   }, [show])
 
   if(!show){
-    return <div>Select a show!</div>
+    return null
   }
 
   const renderList = () => {
     const renderDetails = () => {
       return (
-        <div className='selectedItemDetails'>
-          <h2>{show.title}</h2>
-          <p><span>First Air Date</span><br />{show.first_air_date ? show.first_air_date : 'First air date unknown'}</p>
-          <p><span>Overview</span>{show.overview ? show.overview : 'None to display'}</p>
-          <p><span>Genres</span><br />{genreDisplay(show, showGenres)}</p>
-        </div>
+        <>
+          <div className='closeButton'>
+            <button onClick={clearSelected}>
+            <i className="far fa-times-circle"></i>
+            </button>
+          </div>
+          <div className='sideDetails'>
+            <p><span>First Air Date</span><br />{show.first_air_date ? show.first_air_date : 'First Air Date Unknown'}</p>
+            <p><span>Genres</span><br />{genreDisplay(show, showGenres)}</p>
+          </div>
+          <div className='underDetails'>
+            <h2>{show.name}</h2>
+            <p className='overview'>{show.overview ? show.overview : 'None to display'}</p>
+          </div>  
+        </>
       )
     }
     return (
@@ -53,4 +64,4 @@ const mapStateToProps = state => {
   return { show: state.itemSelect, showGenres: state.showGenresList }
 }
 
-export default connect(mapStateToProps)(TvShowDetails)
+export default connect(mapStateToProps, { clearSelected })(TvShowDetails)

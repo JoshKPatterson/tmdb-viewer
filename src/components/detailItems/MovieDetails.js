@@ -21,7 +21,6 @@ const MovieDetails = ({ movie, movieGenres, clearSelected }) => {
   const renderList = () => {
     const renderDetails = () => {
       return (
-        // <div className='selectedItemDetails'>
         <>
         <div className='closeButton'>
           <button onClick={clearSelected}>
@@ -36,9 +35,7 @@ const MovieDetails = ({ movie, movieGenres, clearSelected }) => {
           <h2>{movie.title}</h2>
           <p className='overview'>{movie.overview ? movie.overview : 'Plot Unknown.'}</p>
         </div>
-          
-          </>
-        //  </div> 
+        </>
       )
     }
     return (
