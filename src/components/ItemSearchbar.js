@@ -31,14 +31,37 @@ const MovieSearchbar = (props) => {
 
   return (
     <div className='itemSearchBar'>
-      <input 
+      <div className='input-group mb-3'>
+        <div className='input-group-prepend'>
+          <span className='input-group-text'><i className="fas fa-search"></i></span>
+        </div>
+        <input
+        className='form-control' 
         type='text'
         value={term}
         onChange={e => setTerm(e.target.value)}
         onKeyPress={keyPressed}
       />
-      <button onClick={onSubmit}>Search</button>
+      <div className='input-group-append'>
       <Dropdown setSetting={onSetSetting}/>
+      <button 
+      className='btn btn-primary' 
+      onClick={onSubmit}
+      >
+        Search
+      </button>
+      </div>
+      
+      </div>
+      
+
+      {/* <button 
+      className='btn btn-primary' 
+      onClick={onSubmit}
+      >
+        Search
+      </button> */}
+      {/* <Dropdown setSetting={onSetSetting}/> */}
     </div>
   )
 }

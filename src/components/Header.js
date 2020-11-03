@@ -2,8 +2,8 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <header>
-      <h1>TMDb Viewer</h1>
+    <header className='navbar'>
+      <h1 className='navbar-brand'>TMDb Viewer</h1>
     </header>
   )
 }

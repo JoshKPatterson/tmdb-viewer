@@ -24,7 +24,7 @@ const PreviousPageButton = ({ type, movieSearch, tvShowSearch, query, page }) =>
     }
   }
 
-  return <button onClick={onSubmit} className='prevButton'>Previous Page</button>
+  return <button onClick={onSubmit} className='prevButton btn btn-primary'>Previous Page</button>
 }
 
 const mapStatetoProps = state => {

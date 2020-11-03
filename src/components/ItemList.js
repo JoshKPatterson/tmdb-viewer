@@ -20,6 +20,7 @@ const MovieList = (props) => {
                     <Movie 
                       title={item.original_title} 
                       key={item.id}
+                      image={item.poster_path}
                       releaseDate={item.release_date}
                       overview={item.overview}
                     />

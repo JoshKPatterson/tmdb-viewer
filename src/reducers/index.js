@@ -2,7 +2,8 @@ import {
   MOVIE_SEARCH,
   TV_SEARCH,
   ITEM_SELECT,
-  GENRES_GET
+  GENRES_GET,
+  CLEAR_SELECTED
  } from '../actions/types'
 import { combineReducers } from 'redux'
 
@@ -51,6 +52,10 @@ const itemSelectReducer = (selectedItem = null, action) => {
     case ITEM_SELECT: 
       return (
         selectedItem = action.payload
+      )
+    case CLEAR_SELECTED:
+      return (
+        selectedItem = null
       )
     default:
       return selectedItem;

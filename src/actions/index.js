@@ -3,7 +3,8 @@ import {
   MOVIE_SEARCH, 
   ITEM_SELECT,
   TV_SEARCH,
-  GENRES_GET
+  GENRES_GET,
+  CLEAR_SELECTED
 } from './types'
 
 export const movieSearch = (query, pageNum) => async dispatch => {
@@ -45,4 +46,10 @@ export const genresGet = () => async dispatch => {
     showGenres: await moviedb.get('/genre/tv/list')
   };
   dispatch({ type: GENRES_GET, payload: responseObj })
+}
+
+export const clearSelected = () => {
+  return {
+    type: CLEAR_SELECTED
+  }
 }

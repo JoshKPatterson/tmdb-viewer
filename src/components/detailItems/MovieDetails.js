@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import image_not_available from '../../images/image_not_available.jpg'
 import { genreDisplay, checkPosterPath } from '../../extraFunctions'
 import Loader from '../Loader'
+import { clearSelected } from '../../actions'
 
-const MovieDetails = ({ movie, movieGenres }) => {
+const MovieDetails = ({ movie, movieGenres, clearSelected }) => {
 
   const [imageLoaded, setImageLoaded] = useState(false)
 
@@ -13,18 +14,31 @@ const MovieDetails = ({ movie, movieGenres }) => {
   }, [movie])
 
   if(!movie){
-    return <div>Select a movie!</div>
+    // return <div>Select a movie!</div>
+    return null
   }
 
   const renderList = () => {
     const renderDetails = () => {
       return (
-        <div className='selectedItemDetails'>
-          <h2>{movie.title}</h2>
+        // <div className='selectedItemDetails'>
+        <>
+        <div className='closeButton'>
+          <button onClick={clearSelected}>
+          <i className="far fa-times-circle"></i>
+          </button>
+        </div>
+        <div className='sideDetails'>
           <p><span>Release Date</span><br />{movie.release_date ? movie.release_date : 'Release Date Unknown.'}</p>
-          <p className='overview'><span>Overview</span><br />{movie.overview ? movie.overview : 'Plot Unknown.'}</p>
           <p className='genres'><span>Genres</span><br />{genreDisplay(movie, movieGenres)}</p>
         </div>
+        <div className='underDetails'>
+          <h2>{movie.title}</h2>
+          <p className='overview'>{movie.overview ? movie.overview : 'Plot Unknown.'}</p>
+        </div>
+          
+          </>
+        //  </div> 
       )
     }
     return (
@@ -53,4 +67,4 @@ const mapStateToProps = state => {
   return { movie: state.itemSelect, movieGenres:  state.movieGenresList }
 }
 
-export default connect(mapStateToProps)(MovieDetails)
+export default connect(mapStateToProps, { clearSelected })(MovieDetails)
