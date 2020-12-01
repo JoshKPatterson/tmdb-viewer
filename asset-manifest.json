@@ -1,13 +1,13 @@
 {
   "main.css": "/tmdb-viewer/static/css/main.e9bc2d87.chunk.css",
-  "main.js": "/tmdb-viewer/static/js/main.aaeeaf59.chunk.js",
-  "main.js.map": "/tmdb-viewer/static/js/main.aaeeaf59.chunk.js.map",
+  "main.js": "/tmdb-viewer/static/js/main.54ab1b4e.chunk.js",
+  "main.js.map": "/tmdb-viewer/static/js/main.54ab1b4e.chunk.js.map",
   "runtime~main.js": "/tmdb-viewer/static/js/runtime~main.aaad15b3.js",
   "runtime~main.js.map": "/tmdb-viewer/static/js/runtime~main.aaad15b3.js.map",
   "static/js/2.2752d1aa.chunk.js": "/tmdb-viewer/static/js/2.2752d1aa.chunk.js",
   "static/js/2.2752d1aa.chunk.js.map": "/tmdb-viewer/static/js/2.2752d1aa.chunk.js.map",
   "index.html": "/tmdb-viewer/index.html",
-  "precache-manifest.69e1043aa7c7ca759cb2566260dff244.js": "/tmdb-viewer/precache-manifest.69e1043aa7c7ca759cb2566260dff244.js",
+  "precache-manifest.dc6ac0b97d4aec8603162d212cbb95c6.js": "/tmdb-viewer/precache-manifest.dc6ac0b97d4aec8603162d212cbb95c6.js",
   "service-worker.js": "/tmdb-viewer/service-worker.js",
   "static/css/main.e9bc2d87.chunk.css.map": "/tmdb-viewer/static/css/main.e9bc2d87.chunk.css.map",
   "static/media/image_not_available.jpg": "/tmdb-viewer/static/media/image_not_available.d3751d34.jpg"

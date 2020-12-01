@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "28492caf3ade4687835d",
+    "revision": "5bab52ad61ea2e2d3609",
     "url": "/tmdb-viewer/static/css/main.e9bc2d87.chunk.css"
   },
   {
-    "revision": "28492caf3ade4687835d",
-    "url": "/tmdb-viewer/static/js/main.aaeeaf59.chunk.js"
+    "revision": "5bab52ad61ea2e2d3609",
+    "url": "/tmdb-viewer/static/js/main.54ab1b4e.chunk.js"
   },
   {
     "revision": "3b023fa923ff08d06e0e",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/tmdb-viewer/static/media/image_not_available.d3751d34.jpg"
   },
   {
-    "revision": "b7860646c095878e30f544addd366c7d",
+    "revision": "1ab4fa2b2eb3a858c1660a327dc46d9d",
     "url": "/tmdb-viewer/index.html"
   }
 ];
