@@ -10,6 +10,7 @@ const TvShow = (props) => {
       <div className='listItemPicture'>
         <img
           src={props.image ? `https://image.tmdb.org/t/p/w300${props.image}` : image_not_available}
+          alt={props.name}
         ></img>
       </div>
       <div className='listItemDetails'>

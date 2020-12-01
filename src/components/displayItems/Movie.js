@@ -11,6 +11,7 @@ const Movie = (props) => {
       <div className='listItemPicture'>
         <img
           src={props.image ? `https://image.tmdb.org/t/p/w400${props.image}` : image_not_available}
+          alt={props.title}
         ></img>
       </div>
       <div className='listItemDetails'>
