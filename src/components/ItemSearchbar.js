@@ -36,9 +36,10 @@ const MovieSearchbar = (props) => {
           <span className='input-group-text'><i className="fas fa-search"></i></span>
         </div>
         <input
+        placeholder='Enter search term here'
         className='form-control' 
         type='text'
-        value={term}
+        // value={term}
         onChange={e => setTerm(e.target.value)}
         onKeyPress={keyPressed}
       />

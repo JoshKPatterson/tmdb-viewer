@@ -121,13 +121,6 @@ select {
   flex-wrap: wrap;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
               0 -4px 6px rgba(0, 0, 0, 0.1);
-              // 0 30px 100px white,
-              // 0 100px 175px 75px rgba(129, 129, 129, 0.75);
-              // 0 -100px 175px 75px white,
-              // 0 100px 175px 75px white;
-              // 0 90px 100px white,
-              // 0 120px 100px white,
-              // 0 150px 100px white;
   background-color: white;
 }
 
@@ -157,15 +150,10 @@ select {
     font-size: 3em;
     border: none;
     background-color: inherit;
-    transition: 0.25s ease-in-out;
+    transition: 0.15s ease-in-out;
     &:hover {
-      color: #525252
+      color: #dc3545
     }
-  }
-  transition: 0.25s ease-in-out;
-  &:hover{
-    -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
   }
 }
 
