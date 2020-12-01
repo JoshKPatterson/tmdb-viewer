@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "bef4cd4e78e6c031bd9c",
-    "url": "/tmdb-viewer/static/css/main.6344ff9f.chunk.css"
+    "revision": "28492caf3ade4687835d",
+    "url": "/tmdb-viewer/static/css/main.e9bc2d87.chunk.css"
   },
   {
-    "revision": "bef4cd4e78e6c031bd9c",
-    "url": "/tmdb-viewer/static/js/main.668c3967.chunk.js"
+    "revision": "28492caf3ade4687835d",
+    "url": "/tmdb-viewer/static/js/main.aaeeaf59.chunk.js"
   },
   {
     "revision": "3b023fa923ff08d06e0e",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/tmdb-viewer/static/media/image_not_available.d3751d34.jpg"
   },
   {
-    "revision": "36c04c0a96fd6e356badb133298fb4e2",
+    "revision": "b7860646c095878e30f544addd366c7d",
     "url": "/tmdb-viewer/index.html"
   }
 ];
